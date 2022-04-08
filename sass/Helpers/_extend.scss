@@ -1,0 +1,26 @@
+.btn-default {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  border: $bd-3 solid !important;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 8px;
+}
+
+.circle {
+  display: block;
+  width: 255px;
+  height: 255px;
+  border-radius: 100%;
+}
+
+.rectangular {
+  display: block;
+  width: 344px;
+  height: 32px;
+}

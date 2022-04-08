@@ -1,0 +1,29 @@
+.btn-signIn {
+  margin: 2rem auto 5rem auto;
+  @extend .btn-default;
+  @include styleButton($color-primary, 8px, 20px, 20px, normal);
+  @include styleText($fs-2, $fw-2, $color-white);
+  transition: 0.5s;
+  &:hover {
+    @include styleButtonHover($color-white, $color-primary, $color-primary);
+  }
+}
+
+.btn-visit {
+  margin: 2rem auto 5rem auto;
+  @extend .btn-default;
+  @include styleButton($color-secondary, 8px, 20px, 20px, normal);
+  @include styleText($fs-2, $fw-2, $color-white);
+  transition: 0.5s;
+  &:hover {
+    border: $bd-3 solid !important;
+    @include styleButtonHover($color-white, $color-secondary, $color-secondary);
+  }
+}
+
+@include responsive("large-down") {
+  .btn-signIn,
+  .btn-visit {
+    font-size: 16px;
+  }
+}

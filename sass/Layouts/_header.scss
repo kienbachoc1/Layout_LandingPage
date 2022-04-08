@@ -1,0 +1,22 @@
+.header {
+  background: $color-white;
+  border: $bd-1 solid $color-gray-border;
+  box-shadow: 0px 4px 4px $color-shadow;
+
+  .navbar-brand {
+    .logo-1 {
+      padding-right: 20px;
+      border-right: $bd-2 solid $color-primary;
+    }
+  }
+
+  .navbar-login {
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    i {
+      color: $color-secondary;
+      font-size: $fs-2;
+    }
+  }
+}

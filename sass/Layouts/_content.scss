@@ -1,0 +1,109 @@
+.landingContent {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    @extend .circle;
+    background-color: $color-secondary;
+
+    position: absolute;
+    bottom: -8rem;
+    left: -8rem;
+    z-index: -1;
+  }
+
+  .landingContent-left {
+    h3 {
+      @include styleText($fs-4, $fw-2, $color-primary);
+      line-height: 37px;
+    }
+
+    .steps {
+      .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        .icon-step {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          width: 75px;
+          height: 75px;
+          border-radius: 100%;
+          border: 3px solid #003b5b;
+        }
+      }
+    }
+  }
+
+  .landingContent-right {
+    position: absolute;
+    right: -9.3rem;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      @include styleText($fs-3, $fw-2, $color-primary);
+      line-height: 29px;
+    }
+  }
+}
+
+@include responsive("large-down") {
+  .landingContent {
+    .landingContent-left {
+      padding: 0;
+      text-align: center;
+      h3 {
+        font-size: $fs-2;
+      }
+      p {
+        margin-top: 0.5rem !important;
+      }
+    }
+    .landingContent-right {
+      right: 0rem;
+
+      padding: 0 0 0 2rem;
+      h3 {
+        font-size: $fs-2;
+      }
+    }
+    &::after {
+      bottom: -12rem;
+      left: -10rem;
+    }
+  }
+}
+
+@include responsive("small-down") {
+  .landingContent {
+    .landingContent-left {
+      h3 {
+        margin: auto;
+        font-size: $fs-2;
+        max-width: 247px;
+        line-height: 24.38px;
+      }
+    }
+    .landingContent-right {
+      position: relative;
+    }
+    .steps {
+      .step {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: start !important;
+        padding: 1rem 2rem !important;
+      }
+    }
+  }
+}

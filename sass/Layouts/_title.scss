@@ -1,0 +1,142 @@
+.landingTitle {
+  position: relative;
+  padding: 8rem 0 1rem 0;
+  &::after {
+    content: "";
+    @extend .rectangular;
+    background-color: $color-gray;
+
+    position: absolute;
+    bottom: 4rem;
+    right: 0rem;
+  }
+  .landingTitle_left {
+    h2 {
+      @include styleText($fs-5, $fw-2, $color-dark);
+      line-height: 44px;
+      text-transform: capitalize;
+    }
+
+    h1 {
+      @include styleText($fs-6, $fw-2, $color-secondary);
+      line-height: 59px;
+      text-transform: uppercase;
+    }
+  }
+
+  .landingTitle_right {
+    position: relative;
+
+    &::before {
+      content: "";
+      @extend .circle;
+      background-color: $color-secondary;
+
+      position: absolute;
+      top: -22rem;
+      left: -2rem;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      @extend .circle;
+      background-color: $color-primary;
+
+      position: absolute;
+      top: -3rem;
+      left: 49rem;
+      z-index: -2;
+    }
+
+    img {
+      position: absolute;
+      top: -28rem;
+      right: -13rem;
+      z-index: -1;
+    }
+  }
+}
+
+@include responsive("large-down") {
+  .landingTitle {
+    padding: 3rem 0 1rem 0;
+    &::after {
+      width: 0;
+    }
+    .landingTitle_left {
+      padding: 0;
+      h2 {
+        @include styleText($fs-4, $fw-2, $color-dark);
+      }
+
+      h1 {
+        @include styleText($fs-5, $fw-2, $color-secondary);
+      }
+    }
+
+    .landingTitle_right {
+      padding: 0;
+
+      &::before {
+        width: 187px;
+        height: 187px;
+
+        position: absolute;
+        top: -11rem;
+        left: 1rem;
+        z-index: -1;
+      }
+
+      &::after {
+        width: 187px;
+        height: 187px;
+
+        position: absolute;
+        top: 2rem;
+        left: 30rem;
+        z-index: -2;
+      }
+      img {
+        width: 455px;
+        height: 455px;
+
+        top: -16rem;
+        right: -4rem;
+      }
+    }
+  }
+}
+
+@include responsive("small-down") {
+  .landingTitle {
+    padding: 16rem 0 0 0 !important;
+    .landingTitle_left {
+      h1 {
+        font-size: 28px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .landingTitle_right {
+    &::before {
+      width: 161px !important;
+      height: 161px !important;
+      top: -51rem !important;
+      left: -8rem !important;
+    }
+    &::after {
+      width: 161px !important;
+      height: 161px !important;
+      top: -41rem !important;
+      left: 23rem !important;
+    }
+    img {
+      width: 393px !important;
+      height: 393px !important;
+      top: -57rem !important;
+      right: -3rem !important;
+    }
+  }
+}

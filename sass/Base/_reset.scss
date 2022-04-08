@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: $fs-1;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+._container {
+  margin: 0 10rem !important;
+}
+
+.paragraph {
+  margin: 2.5rem 0;
+
+  @include styleText($fs-1, $fw-1, $color-dark);
+  line-height: 17px;
+  text-align: justify;
+}
+
+.para-small {
+  margin: 1rem 0 !important;
+  text-align: center;
+
+  @extend .paragraph;
+}
+
+.para-footer {
+  display: block;
+  margin: 1rem 0;
+  line-height: 15px;
+  @include styleText($fs-7, $fw-2, $color-white);
+}
+
+@include responsive("large-down") {
+  ._container {
+    margin: 0 1rem !important;
+  }
+}
